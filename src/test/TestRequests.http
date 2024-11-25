@@ -1,0 +1,81 @@
+GET http://localhost:8080/api/test
+Accept: application/json
+
+
+###
+GET http://localhost:8080/api/columns
+
+
+###
+GET http://localhost:8080/api/types
+
+
+###
+GET http://localhost:8080/api/1
+
+
+### save old
+PUT http://localhost:8080/api/saveFilter
+Content-Type: application/json
+
+{
+  "id": 1,
+  "name": "My Filter 1",
+  "filterValueList": [
+    {
+      "id": 1,
+      "columnId": 1,
+      "typeId": 1,
+      "valueText": "4"
+    },
+    {
+      "id": 2,
+      "columnId": 2,
+      "typeId": 2,
+      "valueText": "Moeow"
+    },
+    {
+      "id": 3,
+      "columnId": 3,
+      "typeId": 3,
+      "valueText": "2021-10-25"
+    }
+  ]
+}
+
+### save new
+PUT http://localhost:8080/api/saveFilter
+Content-Type: application/json
+
+{
+  "name": "My Filter 2",
+  "filterValueList": [
+    {
+      "columnId": 1,
+      "typeId": 1,
+      "valueText": "5"
+    },
+    {
+      "columnId": 2,
+      "typeId": 2,
+      "valueText": "Moeow2"
+    },
+    {
+      "columnId": 3,
+      "typeId": 3,
+      "valueText": "2021-10-29"
+    }
+  ]
+}
+
+###
+GET http://localhost:8080/api/2
+
+
+### Delete new filter_element
+DELETE http://localhost:8080/api/delete-filter-element?id=4
+
+
+### Delete new filter
+DELETE http://localhost:8080/api/delete-filter?id=2
+
